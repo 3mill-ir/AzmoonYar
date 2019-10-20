@@ -1,0 +1,104 @@
+﻿@model AzmoonYarWeb.Models.AzmoonModel
+@section CSS_Requested{
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css" />
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+}
+@section js_Requested{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/spin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/ladda.min.js"></script>
+}
+
+@section js_Handler{
+    <script src="~/Content/AdminContent/assets/js/form-elements.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-buttons.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            FormElements.init();
+            UIButtons.init();
+        });
+    </script>
+    <script src="~/Content/DateTimePicker/jalaali.js" type="text/javascript"></script>
+    <script src="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js" type="text/javascript"></script>
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="container-fluid container-fullw bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row margin-top-30">
+                            <div class="col-lg-6 col-md-12">
+                                <fieldset>
+                                    <legend>
+                                        @Resource.Resource.View_Azmoon<span class="symbol required"></span>
+                                    </legend>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Name)
+                                        <div class="note-editor">
+                                            @Html.TextAreaFor(model => model.Name, new { @class = "form-control autosize area-animated FixedColTextArea", placeholder = "نام آزمون مورد نظر را در این قسمت وارد کنید ...", @style = "height:85px; min-height:85px;  max-height:85px", maxlength = "190" })
+                                            @Html.ValidationMessageFor(model => model.Name)
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <fieldset>
+                                    <legend>
+                                        @Resource.Resource.View_Date<span class="symbol required"></span>
+                                    </legend>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.StartDateOnUtcJalali)
+                                            @Html.ValidationMessageFor(model => model.StartDateOnUtcJalali)
+                                            <div class="input-group">
+                                                <div class="input-group-addon" data-disablebeforetoday="true" data-mddatetimepicker="true" data-targetselector="#exampleInput1" data-trigger="click" data-enabletimepicker="true" data-mdpersiandatetimepicker="" data-mdformat="yyyy/MM/dd HH:mm:ss" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1395,&quot;Month&quot;:6,&quot;Day&quot;:13,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" style="cursor: pointer;" data-original-title="" title="" data-mdpersiandatetimepickershowing="false">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </div>
+                                                @Html.TextBoxFor(model => model.StartDateOnUtcJalali, new { @class = "form-control", id = "exampleInput1", placeholder = @Resource.Resource.View_FromDate })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.EndDateOnUtcJalali)
+                                            @Html.ValidationMessageFor(model => model.EndDateOnUtcJalali)
+                                            <div class="input-group">
+                                                <div class="input-group-addon" data-disablebeforetoday="true" data-mddatetimepicker="true" data-targetselector="#exampleInput2" data-trigger="click" data-enabletimepicker="true" data-mdpersiandatetimepicker="" data-mdformat="yyyy/MM/dd HH:mm:ss" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1395,&quot;Month&quot;:6,&quot;Day&quot;:13,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" style="cursor: pointer;" data-original-title="" title="" data-mdpersiandatetimepickershowing="false">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </div>
+                                                @Html.TextBoxFor(model => model.EndDateOnUtcJalali, new { @class = "form-control", id = "exampleInput2", placeholder = @Resource.Resource.View_ToDate })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                @Html.HiddenFor(model=>model.ID)
+                                <div style="text-align:center">
+                                    <button type="submit" class="btn btn-wide btn-dark-green ladda-button " data-style="contract" id="PipoSubmit">
+                                        <span class="ladda-label">@Resource.Resource.Submit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+
+

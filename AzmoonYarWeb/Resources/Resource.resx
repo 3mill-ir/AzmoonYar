@@ -1,0 +1,1506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PostCategory_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="PostCategory_isView" xml:space="preserve">
+    <value>صفحه مستقل</value>
+  </data>
+  <data name="PostCategory_SeoName" xml:space="preserve">
+    <value>سئو</value>
+  </data>
+  <data name="PostCategory_Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="PostCategory_Tags" xml:space="preserve">
+    <value>تگ ها</value>
+  </data>
+  <data name="PostCategory_Text" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="PostCategory_Weight" xml:space="preserve">
+    <value>وزن</value>
+  </data>
+  <data name="View_Author" xml:space="preserve">
+    <value>طراحی و توسعه هزاره سوم</value>
+  </data>
+  <data name="View_Description" xml:space="preserve">
+    <value>پنل مدیریت آزمون سولدا</value>
+  </data>
+  <data name="View_Tittle" xml:space="preserve">
+    <value>پنل مدیریت</value>
+  </data>
+  <data name="View_AddPostCategory" xml:space="preserve">
+    <value>اضافه کردن شاخه</value>
+  </data>
+  <data name="View_ListPostCategory" xml:space="preserve">
+    <value>لیست شاخه ها</value>
+  </data>
+  <data name="View_PostCategory" xml:space="preserve">
+    <value>شاخه</value>
+  </data>
+  <data name="View_SubmitButton" xml:space="preserve">
+    <value>درج</value>
+  </data>
+  <data name="View_AddPostSubCategory" xml:space="preserve">
+    <value>اضافه کردن زیر شاخه</value>
+  </data>
+  <data name="View_EditButton" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="View_ValidationError" xml:space="preserve">
+    <value>فیلد مورد نظر را تکمیل کنید</value>
+  </data>
+  <data name="PollAnswer_AnswerKey" xml:space="preserve">
+    <value>کلید پاسخ</value>
+  </data>
+  <data name="PollAnswer_CreateOnUTC" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="PollAnswer_F_PollQuestion_Id" xml:space="preserve">
+    <value>شناسه پرسش</value>
+  </data>
+  <data name="PollAnswer_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="PollAnswer_Score" xml:space="preserve">
+    <value>امتیاز</value>
+  </data>
+  <data name="PollAnswer_Text" xml:space="preserve">
+    <value>عنوان گزینه مورد نظر را بنویسید </value>
+  </data>
+  <data name="PollLog_Address" xml:space="preserve">
+    <value>مسیر</value>
+  </data>
+  <data name="PollLog_Device" xml:space="preserve">
+    <value>دستگاه کاربری</value>
+  </data>
+  <data name="PollLog_F_PollAnswer_Id" xml:space="preserve">
+    <value>شناسه جواب</value>
+  </data>
+  <data name="PollLog_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="PollQuestion_CreatedOnUTC" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="PollQuestion_EndDateUTC" xml:space="preserve">
+    <value>زمان پایان</value>
+  </data>
+  <data name="PollQuestion_F_User_Id" xml:space="preserve">
+    <value>شناسه کاربر</value>
+  </data>
+  <data name="PollQuestion_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="PollQuestion_Question" xml:space="preserve">
+    <value>متن پرسش</value>
+  </data>
+  <data name="PollQuestion_StartedOnUTC" xml:space="preserve">
+    <value>زمان شروع</value>
+  </data>
+  <data name="PostCommentReply_CreateOnUTC" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="PostCommentReply_Display" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="PostCommentReply_F_PostsComments_Id" xml:space="preserve">
+    <value>شناسه کامنت پست</value>
+  </data>
+  <data name="PostCommentReply_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="PostCommentReply_NumberOfDislikes" xml:space="preserve">
+    <value>تعداد دیس لایک</value>
+  </data>
+  <data name="PostCommentReply_NumberOfLikes" xml:space="preserve">
+    <value>تعداد لایک</value>
+  </data>
+  <data name="PostCommentReply_Text" xml:space="preserve">
+    <value>پاسخ کامنت</value>
+  </data>
+  <data name="PostComment_CreateOnUtc" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="PostComment_Display" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="PostComment_F_Posts_Id" xml:space="preserve">
+    <value>شناسه پست</value>
+  </data>
+  <data name="PostComment_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="PostComment_NumberOfDislikes" xml:space="preserve">
+    <value>تعداد دیس لایک</value>
+  </data>
+  <data name="PostComment_NumberOfLikes" xml:space="preserve">
+    <value>تعداد لایک</value>
+  </data>
+  <data name="PostComment_NumberOfReply" xml:space="preserve">
+    <value>تعداد پاسخ</value>
+  </data>
+  <data name="PostComment_Text" xml:space="preserve">
+    <value>کامنت</value>
+  </data>
+  <data name="PostSubCategory_F_PostCategory_ID" xml:space="preserve">
+    <value>شناسه شاخه پست</value>
+  </data>
+  <data name="PostSubCategory_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="PostSubCategory_Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="PostSubCategory_Tags" xml:space="preserve">
+    <value>برچسپ</value>
+  </data>
+  <data name="PostSubCategory_TagsText" xml:space="preserve">
+    <value>عنوان برچسپ ها</value>
+  </data>
+  <data name="PostSubCategory_Text" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="PostSubCategory_Weight" xml:space="preserve">
+    <value>وزن</value>
+  </data>
+  <data name="Post_Content_Four" xml:space="preserve">
+    <value>محتوی پست</value>
+  </data>
+  <data name="Post_Content_One" xml:space="preserve">
+    <value>عنوان پست</value>
+  </data>
+  <data name="Post_Content_Three" xml:space="preserve">
+    <value>خلاصه پست</value>
+  </data>
+  <data name="Post_Content_Two" xml:space="preserve">
+    <value>مسیر عکس پست</value>
+  </data>
+  <data name="Post_CreateDateUtc" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="Post_Display" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="Post_DisplayNumberOfComments" xml:space="preserve">
+    <value>نمایش تعداد کامنت</value>
+  </data>
+  <data name="Post_F_PostsSubCategory_ID" xml:space="preserve">
+    <value>شناسه زیر شاخه پست</value>
+  </data>
+  <data name="Post_F_Users_Id" xml:space="preserve">
+    <value>شناسه کاربر</value>
+  </data>
+  <data name="Post_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="Post_NumberOfDisLikes" xml:space="preserve">
+    <value>تعداد دیس لایک</value>
+  </data>
+  <data name="Post_NumberOfLikes" xml:space="preserve">
+    <value>تعداد لایک </value>
+  </data>
+  <data name="Post_Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="Post_Tags" xml:space="preserve">
+    <value>برچسب </value>
+  </data>
+  <data name="Post_TagsText" xml:space="preserve">
+    <value>عناوین برچسب ها</value>
+  </data>
+  <data name="Roll_Description" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Roll_Value" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Tag_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="Tag_Text" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="TicketInboxMedia_F_TicketInbox_Id" xml:space="preserve">
+    <value>شناسه تیکت دریافت</value>
+  </data>
+  <data name="TicketInboxMedia_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="TicketInboxMedia_MediaPath" xml:space="preserve">
+    <value>مسیر ذخیره رسانه</value>
+  </data>
+  <data name="TicketInboxMedia_MediaType" xml:space="preserve">
+    <value>نوع رسانه</value>
+  </data>
+  <data name="TicketInbox_CreatedOnUTC" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="TicketInbox_F_Ticket_Id" xml:space="preserve">
+    <value>شناسه تیکت</value>
+  </data>
+  <data name="TicketInbox_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="TicketInbox_TicketContent" xml:space="preserve">
+    <value>محتوی تیکت</value>
+  </data>
+  <data name="TicketInbox_TicketForm" xml:space="preserve">
+    <value>فرم تیکت</value>
+  </data>
+  <data name="TicketInbox_TicketType" xml:space="preserve">
+    <value>نوع تیکت</value>
+  </data>
+  <data name="TicketLog_Address" xml:space="preserve">
+    <value>مسیر</value>
+  </data>
+  <data name="TicketLog_CreatedOnUTC" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="TicketLog_Device" xml:space="preserve">
+    <value>دستگاه</value>
+  </data>
+  <data name="TicketLog_F_TicketInbox_Id" xml:space="preserve">
+    <value>شناسه تیکت دریافت</value>
+  </data>
+  <data name="TicketLog_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="TicketOutBox_Content_One" xml:space="preserve">
+    <value>متن پاسخ</value>
+  </data>
+  <data name="TicketOutBox_CreatedOnUTC" xml:space="preserve">
+    <value>زمان اجرا</value>
+  </data>
+  <data name="TicketOutBox_F_TicketInbox_Id" xml:space="preserve">
+    <value>شناسه تیکت دریافت</value>
+  </data>
+  <data name="TicketOutBox_F_User_Id" xml:space="preserve">
+    <value>شناسه کاربر</value>
+  </data>
+  <data name="TicketOutBox_ID" xml:space="preserve">
+    <value>نشانی</value>
+  </data>
+  <data name="TicketOutBox_isRead" xml:space="preserve">
+    <value>قابل خواندن</value>
+  </data>
+  <data name="TicketOutBox_SMSStatusOne" xml:space="preserve">
+    <value>وضعیت اولیه پیامک</value>
+  </data>
+  <data name="TicketOutBox_SMSStatusTwo" xml:space="preserve">
+    <value>وضعیت ثانویه پیامک</value>
+  </data>
+  <data name="TicketOutBox_SMSText" xml:space="preserve">
+    <value>متن پیامک</value>
+  </data>
+  <data name="Ticket_ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="Ticket_LastUpdateOnUtc" xml:space="preserve">
+    <value>زمان آخرین بروزرسانی</value>
+  </data>
+  <data name="Ticket_Status" xml:space="preserve">
+    <value>وضعیت تیکت</value>
+  </data>
+  <data name="UserInformation_CreatedOnUTC" xml:space="preserve">
+    <value>زمان ایجاد</value>
+  </data>
+  <data name="UserInformation_Email" xml:space="preserve">
+    <value>پست الکترونیکی</value>
+  </data>
+  <data name="UserInformation_FirstName" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="UserInformation_F_ID" xml:space="preserve">
+    <value>نشانی یوزر</value>
+  </data>
+  <data name="UserInformation_ID" xml:space="preserve">
+    <value>نشانی</value>
+  </data>
+  <data name="UserInformation_LastName" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="UserInformation_MobileNumber" xml:space="preserve">
+    <value>شماره موبایل</value>
+  </data>
+  <data name="UserInformation_Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="UserInformation_UpdatedOnUTC" xml:space="preserve">
+    <value>زمان بروز رسانی</value>
+  </data>
+  <data name="View_ChangeStatus" xml:space="preserve">
+    <value>تغییر وضعیت</value>
+  </data>
+  <data name="View_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="View_AreYouShure" xml:space="preserve">
+    <value>آیا اطمینان خاطر دارید ؟</value>
+  </data>
+  <data name="View_Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="View_Delete" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="View_Danger" xml:space="preserve">
+    <value>هشدار!</value>
+  </data>
+  <data name="View_Dashboard" xml:space="preserve">
+    <value>داشبورد</value>
+  </data>
+  <data name="View_MainNavigation_Tittle" xml:space="preserve">
+    <value>منوی مدیریت</value>
+  </data>
+  <data name="View_Placeholder_Search" xml:space="preserve">
+    <value>جستجو...</value>
+  </data>
+  <data name="PageTittle_ContactUS" xml:space="preserve">
+    <value>برای اطلاعات بیشتر با پشتیبانی تماس حاصل فرمایید</value>
+  </data>
+  <data name="PageTittle_Description_AddPostCategory" xml:space="preserve">
+    <value>در این بخش می توانید شاخه جدید برای منو ها تعریف کنید.</value>
+  </data>
+  <data name="PageTittle_Description_EditPostCategory" xml:space="preserve">
+    <value>در این بخش می توانید شاخه را ویرایش نمایید</value>
+  </data>
+  <data name="PageTittle_Description_ListPostCategory" xml:space="preserve">
+    <value>در این بخش می توانید لیست شاخه های موجود را تماشا فرمایید.</value>
+  </data>
+  <data name="PageTittle_Tittle_AddPostCategory" xml:space="preserve">
+    <value>شاخه جدید</value>
+  </data>
+  <data name="PageTittle_Tittle_EditPostCategory" xml:space="preserve">
+    <value>ویرایش شاخه</value>
+  </data>
+  <data name="PageTittle_Tittle_ListPostCategory" xml:space="preserve">
+    <value>لیست شاخه ها</value>
+  </data>
+  <data name="View_Details" xml:space="preserve">
+    <value>نمایش جزییات</value>
+  </data>
+  <data name="View_ReturnToList" xml:space="preserve">
+    <value>بازگشت به لیست</value>
+  </data>
+  <data name="View_Akhbar" xml:space="preserve">
+    <value>اخبار</value>
+  </data>
+  <data name="View_DashbordKhabar" xml:space="preserve">
+    <value>داشبورد اخبار</value>
+  </data>
+  <data name="View_HozeAkhbar" xml:space="preserve">
+    <value>اخبار حوزه</value>
+  </data>
+  <data name="View_ListKhabar" xml:space="preserve">
+    <value>لیست اخبار</value>
+  </data>
+  <data name="View_NewKhabar" xml:space="preserve">
+    <value>درج خبر جدید</value>
+  </data>
+  <data name="View_PublicAkhbar" xml:space="preserve">
+    <value>اخبار عمومی</value>
+  </data>
+  <data name="Post_DisplayNumberOfVisitors" xml:space="preserve">
+    <value>تعداد بازدید کنندگان</value>
+  </data>
+  <data name="View_SendToTelegram" xml:space="preserve">
+    <value>ارسال به تلگرام</value>
+  </data>
+  <data name="View_NemayesheChatTelegram" xml:space="preserve">
+    <value>نمایش پست تلگرام</value>
+  </data>
+  <data name="View_ModirTelegramChannel" xml:space="preserve">
+    <value>مدیر کانال</value>
+  </data>
+  <data name="View_AddFile" xml:space="preserve">
+    <value>افزودن فایل</value>
+  </data>
+  <data name="View_Correspondence" xml:space="preserve">
+    <value>اهم مکاتبات</value>
+  </data>
+  <data name="View_Interviews" xml:space="preserve">
+    <value>مصاحبه ها</value>
+  </data>
+  <data name="View_Parliament" xml:space="preserve">
+    <value>مجلس</value>
+  </data>
+  <data name="View_Questions" xml:space="preserve">
+    <value>تذکرات و سوالات</value>
+  </data>
+  <data name="View_Speech" xml:space="preserve">
+    <value>سخنرانی ها و نطق ها</value>
+  </data>
+  <data name="View_UsersComments" xml:space="preserve">
+    <value>مدیریت کامنت ها</value>
+  </data>
+  <data name="View_UsersCommentsList" xml:space="preserve">
+    <value>لیست کامنت ها</value>
+  </data>
+  <data name="View_Number" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="PageTittle_Description_ListComment" xml:space="preserve">
+    <value>در اینجا می توانید لیست تمامی کامنها را مشاهده نمایید.</value>
+  </data>
+  <data name="PageTittle_Tittle_ListComment" xml:space="preserve">
+    <value>کامنت ها</value>
+  </data>
+  <data name="View_InsertPoll" xml:space="preserve">
+    <value>درج نظرسنجی جدید</value>
+  </data>
+  <data name="View_ListPoll" xml:space="preserve">
+    <value>لیست نظرسنجی ها</value>
+  </data>
+  <data name="View_Poll" xml:space="preserve">
+    <value>نظرسنجی</value>
+  </data>
+  <data name="PollQuestion_AnswerBoxes" xml:space="preserve">
+    <value>گزینه های پاسخ نظرسنجی</value>
+  </data>
+  <data name="PollQuestion_Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="View_MoreAnswers" xml:space="preserve">
+    <value>درج جواب های بیشتر</value>
+  </data>
+  <data name="View_FromDate" xml:space="preserve">
+    <value>از تاریخ :</value>
+  </data>
+  <data name="View_ToDate" xml:space="preserve">
+    <value>تا تاریخ :</value>
+  </data>
+  <data name="PollQuestion_Active" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="Telegram_SendDocument" xml:space="preserve">
+    <value>ارسال فایل</value>
+  </data>
+  <data name="Telegram_SendMessage" xml:space="preserve">
+    <value>ارسال پیام</value>
+  </data>
+  <data name="Telegram_SendPhoto" xml:space="preserve">
+    <value>ارسال عکس</value>
+  </data>
+  <data name="Telegram_SendVideo" xml:space="preserve">
+    <value>ارسال ویدئو</value>
+  </data>
+  <data name="Telegram_SendVoice" xml:space="preserve">
+    <value>ارسال فایل صوتی</value>
+  </data>
+  <data name="Telegram_TelegramChanneleManagement" xml:space="preserve">
+    <value>مدیریت کانال تلگرام</value>
+  </data>
+  <data name="Telegram_Caption" xml:space="preserve">
+    <value>متن همراه :</value>
+  </data>
+  <data name="Telegram_Document" xml:space="preserve">
+    <value>فایل مورد نظر جهت ارسال :</value>
+  </data>
+  <data name="Telegram_Photo" xml:space="preserve">
+    <value>عکس مورد نظر جهت ارسال :</value>
+  </data>
+  <data name="Telegram_Video" xml:space="preserve">
+    <value>فیلم مورد نظر جهت ارسال :</value>
+  </data>
+  <data name="Telegram_Voice" xml:space="preserve">
+    <value>فایل صوتی مورد نظر جهت ارسال :</value>
+  </data>
+  <data name="TelegramModel_Caption" xml:space="preserve">
+    <value>متن همراه :</value>
+  </data>
+  <data name="TelegramModel_Path" xml:space="preserve">
+    <value>مسیر داده ارسالی :</value>
+  </data>
+  <data name="Telegram_CaptionPlaceHolder" xml:space="preserve">
+    <value>لطفا در صورت نیاز متن همراه مورد نظر خود را بنویسید</value>
+  </data>
+  <data name="View_SendButton" xml:space="preserve">
+    <value>ارسال به کانال تلگرام</value>
+  </data>
+  <data name="User_View_Tittle" xml:space="preserve">
+    <value>وب سایت رسمی  </value>
+  </data>
+  <data name="PostSubCategory_SeoName" xml:space="preserve">
+    <value>نام سئو</value>
+  </data>
+  <data name="PostSubCategory_IsView" xml:space="preserve">
+    <value>شیوه نمایش</value>
+  </data>
+  <data name="User_MoreDetails" xml:space="preserve">
+    <value>اطلاعات بیشتر ...</value>
+  </data>
+  <data name="Post_Comments" xml:space="preserve">
+    <value>نظرات کاربران :</value>
+  </data>
+  <data name="User_LeaveYourReply" xml:space="preserve">
+    <value>پاسخ خود را درج کنید</value>
+  </data>
+  <data name="User_PleaseInsertYourComment" xml:space="preserve">
+    <value>لطفا کامنت خود را در این فیلد درج کنید ... </value>
+  </data>
+  <data name="User_ReplyButton" xml:space="preserve">
+    <value>درج پاسخ</value>
+  </data>
+  <data name="User_Says" xml:space="preserve">
+    <value>کاربر مهمان می گوید :</value>
+  </data>
+  <data name="User_SubmitCommentButton" xml:space="preserve">
+    <value>ارسال نظر</value>
+  </data>
+  <data name="User_NoCommentInserted" xml:space="preserve">
+    <value>تا کنون هیچ نظری برای این پست ثبت نشده</value>
+  </data>
+  <data name="User_PleaseInsertYourReply" xml:space="preserve">
+    <value>لطفا پاسخ خود را در این فیلد بنویسید ...</value>
+  </data>
+  <data name="Ticket_Changetatus" xml:space="preserve">
+    <value>تغییر وضعیت درخواست</value>
+  </data>
+  <data name="Ticket_Reply" xml:space="preserve">
+    <value>پاسخ درخواست</value>
+  </data>
+  <data name="Ticket_ResponseForm" xml:space="preserve">
+    <value>فرم پاسخ درخواست</value>
+  </data>
+  <data name="User_SendingRequests" xml:space="preserve">
+    <value>ارسال درخواست ها :</value>
+  </data>
+  <data name="UserTicketModel_Content" xml:space="preserve">
+    <value>متن درخواست :</value>
+  </data>
+  <data name="User_SendRequest" xml:space="preserve">
+    <value>ارسال درخواست</value>
+  </data>
+  <data name="User_PleaseInsertYourTrackingCode" xml:space="preserve">
+    <value>لطفا در صورت داشتن کد پیگیری آن را وارد نمایید :</value>
+  </data>
+  <data name="User_ButtonTrackRequest" xml:space="preserve">
+    <value>پیگیری </value>
+  </data>
+  <data name="User_RequestConversationList" xml:space="preserve">
+    <value>لیست مکالمات درخواست :</value>
+  </data>
+  <data name="User_YourRequest" xml:space="preserve">
+    <value>درخواست شما :</value>
+  </data>
+  <data name="User_YourRequestAnswer" xml:space="preserve">
+    <value>پاسخ درخواست  :</value>
+  </data>
+  <data name="User_TrackRequest" xml:space="preserve">
+    <value>پیگیری درخواست ها :</value>
+  </data>
+  <data name="User_InsertYourTrackingCode" xml:space="preserve">
+    <value>کد پیگیری خود را وارد کنید :</value>
+  </data>
+  <data name="User_InsertPollButton" xml:space="preserve">
+    <value>ارسال نظر</value>
+  </data>
+  <data name="User_PollParticipation" xml:space="preserve">
+    <value>شرکت در نظر سنجی :</value>
+  </data>
+  <data name="User_PollsChart" xml:space="preserve">
+    <value>نمودار نظرات ثبت شده :</value>
+  </data>
+  <data name="Editor_AboutEditor" xml:space="preserve">
+    <value>این ویرایشگر قابلیت درج هرگونه عکس و فیلم و متن به شیوه های دلخواه شما را داراست</value>
+  </data>
+  <data name="Post_InsertPost" xml:space="preserve">
+    <value>درج پست جدید</value>
+  </data>
+  <data name="Post_InsertYourFullContent" xml:space="preserve">
+    <value>لطفا محتوی کامل پست مورد نظر را در ویرایشگر زیر درج کنید</value>
+  </data>
+  <data name="Post_ListPublicPost" xml:space="preserve">
+    <value>لیست خبرهای عمومی :</value>
+  </data>
+  <data name="Ticket_ReplyViaSMS" xml:space="preserve">
+    <value>پاسخ از طریق پیامک</value>
+  </data>
+  <data name="Ticket_ReplyClose" xml:space="preserve">
+    <value>لغو ارسال پاسخ</value>
+  </data>
+  <data name="Ticket_ReplySend" xml:space="preserve">
+    <value>ارسال پاسخ درخواست</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Ticket_ChangeStatus" xml:space="preserve">
+    <value>تغییر وضعیت تیکت</value>
+  </data>
+  <data name="Ticket_ChangeStatusForm" xml:space="preserve">
+    <value>فرم تغییر وضعیت تیکت</value>
+  </data>
+  <data name="Ticket_ChangeStatusFromClose" xml:space="preserve">
+    <value>بستن فرم تغییر وضعیت تیکت</value>
+  </data>
+  <data name="AboutApplication" xml:space="preserve">
+    <value>درباره سامانه</value>
+  </data>
+  <data name="AboutCompany" xml:space="preserve">
+    <value>درباره شرکت</value>
+  </data>
+  <data name="ApplicationHelp" xml:space="preserve">
+    <value>راهنمای سامانه</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>نام شرکت</value>
+  </data>
+  <data name="CopyRight" xml:space="preserve">
+    <value>کلیه حقوق مادی و معنوی این اثر  محفوظ می باشد.</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>راهنما</value>
+  </data>
+  <data name="User_PopularPosts" xml:space="preserve">
+    <value>پر بازدید ترین ها</value>
+  </data>
+  <data name="User_RecentPosts" xml:space="preserve">
+    <value>جدید ترین ها</value>
+  </data>
+  <data name="User_Tags" xml:space="preserve">
+    <value>برچسب ها</value>
+  </data>
+  <data name="User_DailyNews" xml:space="preserve">
+    <value>اخبار روزانه</value>
+  </data>
+  <data name="User_Links" xml:space="preserve">
+    <value>پیوند ها</value>
+  </data>
+  <data name="User_AyineKhedmat" xml:space="preserve">
+    <value>آیینه خدمت</value>
+  </data>
+  <data name="User_BrifeFunctional" xml:space="preserve">
+    <value>خلاصه عملکرد دکتر خضری در دوره نهم</value>
+  </data>
+  <data name="User_Archive" xml:space="preserve">
+    <value>آرشیو اخبار</value>
+  </data>
+  <data name="User_RuzPic" xml:space="preserve">
+    <value>تصاویر روز</value>
+  </data>
+  <data name="User_RuzWord" xml:space="preserve">
+    <value>سخن روز</value>
+  </data>
+  <data name="User_SpeechVideo" xml:space="preserve">
+    <value>فیلم نطق ها و سخنرانی ها</value>
+  </data>
+  <data name="PageTittle_AddPublicKhabar" xml:space="preserve">
+    <value>ثبت خبر عمومی جدید</value>
+  </data>
+  <data name="PageTittle_ListAkhbarPublic" xml:space="preserve">
+    <value>لیست اخبار عمومی</value>
+  </data>
+  <data name="ChangeDisplayStatus" xml:space="preserve">
+    <value>تغییر وضعیت نمایش</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>جزییات</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="PageTittle_AddHozeKhabar" xml:space="preserve">
+    <value>ثبت خبر حوزه جدید</value>
+  </data>
+  <data name="PageTittle_ListAkhbarHoze" xml:space="preserve">
+    <value>لیست اخبار حوزه</value>
+  </data>
+  <data name="PageTittle_ListCorrespondence" xml:space="preserve">
+    <value>لیست اهم مکاتبات</value>
+  </data>
+  <data name="PageTittle_ListInterview" xml:space="preserve">
+    <value>لیست مصاحبه ها</value>
+  </data>
+  <data name="PageTittle_ListQuestion" xml:space="preserve">
+    <value>لیست تذکرات و سوالات</value>
+  </data>
+  <data name="PageTittle_ListSpeech" xml:space="preserve">
+    <value>لیست سخنرانی و نطق ها</value>
+  </data>
+  <data name="PageTittle_AddCorrespondence" xml:space="preserve">
+    <value>ثبت اهم مکاتبات جدید</value>
+  </data>
+  <data name="PageTittle_AddInterview" xml:space="preserve">
+    <value>ثبت مصاحبه های جدید</value>
+  </data>
+  <data name="PageTittle_AddQuestion" xml:space="preserve">
+    <value>ثبت تذکرات و سوالات جدید</value>
+  </data>
+  <data name="PageTittle_AddSpeech" xml:space="preserve">
+    <value>ثبت سخنرانی و نطق های جدید</value>
+  </data>
+  <data name="Footer_ContactUs" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Footer_CopyRight3Mill" xml:space="preserve">
+    <value>©Copyright  کلیه حقوق مادی و معنوی این اثر محفوظ می باشد </value>
+  </data>
+  <data name="Footer_Gallery" xml:space="preserve">
+    <value>گالری تصاویر</value>
+  </data>
+  <data name="Footer_Links" xml:space="preserve">
+    <value>پیوند های داخلی</value>
+  </data>
+  <data name="Footer_ViewerFacts" xml:space="preserve">
+    <value>آمار بازدید</value>
+  </data>
+  <data name="User_LatestNews" xml:space="preserve">
+    <value>تازه های خبر</value>
+  </data>
+  <data name="User_LatestParliament" xml:space="preserve">
+    <value>تازه های مجلس</value>
+  </data>
+  <data name="User_TelegramLinkDiscription" xml:space="preserve">
+    <value>لطفا جهت پیوستن به کانال خبری تلگرام دکتر خضری روی این بخش کلیک کنید</value>
+  </data>
+  <data name="User_TelegramLinkTitle" xml:space="preserve">
+    <value>لینک پیوستن به کانال تلگرام دکتر خضری ...</value>
+  </data>
+  <data name="User_MessagesAndInformations" xml:space="preserve">
+    <value>پیام ها و اطلاعیه ها</value>
+  </data>
+  <data name="User_Enter" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="User_TicketGuide" xml:space="preserve">
+    <value>لطفا برای کسب راهنمایی های لازم جهت ثبت و یا پیگیری درخواست هایتان بر روی کلید زیر کلیک کنید </value>
+  </data>
+  <data name="User_TicketGuideButton" xml:space="preserve">
+    <value>کسب راهنمایی</value>
+  </data>
+  <data name="User_TicketSendTrackText" xml:space="preserve">
+    <value>ثبت و پیگیری درخواست ها</value>
+  </data>
+  <data name="PageTittle_EditPublicKhabar" xml:space="preserve">
+    <value>ویرایش اخبار عمومی</value>
+  </data>
+  <data name="PageTittle_PublicKhabarSucces" xml:space="preserve">
+    <value>موفقیت در ثبت خبر عمومی</value>
+  </data>
+  <data name="View_Supprot" xml:space="preserve">
+    <value>پشتیبانی</value>
+  </data>
+  <data name="View_All" xml:space="preserve">
+    <value>همه</value>
+  </data>
+  <data name="PageTittle_ChangeDisplayCorrespondence" xml:space="preserve">
+    <value>تغییر وضعیت نمایش اهم مکاتبه</value>
+  </data>
+  <data name="PageTittle_ChangeDisplayHozeKhabar" xml:space="preserve">
+    <value>تغییر وضعیت نمایش خبر حوزه انتخابیه</value>
+  </data>
+  <data name="PageTittle_ChangeDisplayInterview" xml:space="preserve">
+    <value>تغییر وضعیت نمایش مصاحبه</value>
+  </data>
+  <data name="PageTittle_ChangeDisplayPublicKhabar" xml:space="preserve">
+    <value>تغییر وضعیت نمایش خبر عمومی</value>
+  </data>
+  <data name="PageTittle_ChangeDisplayQuestion" xml:space="preserve">
+    <value>تغییر وضعیت نمایش تذکر و سوال</value>
+  </data>
+  <data name="PageTittle_ChangeDisplaySpeech" xml:space="preserve">
+    <value>تغییر وضعیت نمایش سخنرانی و نطق</value>
+  </data>
+  <data name="PageTittle_EditCorrespondence" xml:space="preserve">
+    <value>ویرایش اهم مکاتبات</value>
+  </data>
+  <data name="PageTittle_EditInterview" xml:space="preserve">
+    <value>ویرایش مصاحبه ها</value>
+  </data>
+  <data name="PageTittle_EditQuestion" xml:space="preserve">
+    <value>ویرایش تذکرات و سوالات</value>
+  </data>
+  <data name="PageTittle_EditSpeech" xml:space="preserve">
+    <value>ویرایش سخنرانی و نطق ها</value>
+  </data>
+  <data name="User_LeaveYourComment" xml:space="preserve">
+    <value>لطفا نظر خود را به اشتراک بگذارید</value>
+  </data>
+  <data name="PageTittle_AddPollQuestion" xml:space="preserve">
+    <value>اضافه کردن نظرسنجی جدید</value>
+  </data>
+  <data name="PageTittle_ListPollQuestion" xml:space="preserve">
+    <value>لیست نظرسنجی ها</value>
+  </data>
+  <data name="PageTittle_AddPostCategory" xml:space="preserve">
+    <value>ثبت شاخه جدید</value>
+  </data>
+  <data name="PageTittle_AddPostSubCategory" xml:space="preserve">
+    <value>ثبت زیر شاخه جدید</value>
+  </data>
+  <data name="PageTittle_ListPostSubCategory" xml:space="preserve">
+    <value>لیست زیر شاخه ها</value>
+  </data>
+  <data name="User_TicketFacts" xml:space="preserve">
+    <value>آمار پیگیری درخواست ها :</value>
+  </data>
+  <data name="View_ViewFacts" xml:space="preserve">
+    <value>آمار بازدید سایت</value>
+  </data>
+  <data name="View_CommentManagement" xml:space="preserve">
+    <value>مدیریت نظرات و پاسخ ها</value>
+  </data>
+  <data name="View_LastCommentsReplies" xml:space="preserve">
+    <value>آخرین نظرات و پاسخ ها</value>
+  </data>
+  <data name="View_LatestActivePoll" xml:space="preserve">
+    <value>آخرین نظر سنجی فعال </value>
+  </data>
+  <data name="View_NoActivePoll" xml:space="preserve">
+    <value>در حال حاضر هیچ نظر سنجی فعال نیست !</value>
+  </data>
+  <data name="View_PollManagement" xml:space="preserve">
+    <value>مدیریت نظرسنجی ها</value>
+  </data>
+  <data name="PageTittle_Dashboard" xml:space="preserve">
+    <value>داشبورد (صفحه اصلی)</value>
+  </data>
+  <data name="View_LastestTickets" xml:space="preserve">
+    <value>آخرین درخواست ها</value>
+  </data>
+  <data name="View_TicketManagement" xml:space="preserve">
+    <value>مدیریت درخواست ها</value>
+  </data>
+  <data name="View_DarHaleBarresi" xml:space="preserve">
+    <value>در حال بررسی :</value>
+  </data>
+  <data name="View_Mardud" xml:space="preserve">
+    <value>مردود :</value>
+  </data>
+  <data name="View_TaeedShode" xml:space="preserve">
+    <value>تایید شده :</value>
+  </data>
+  <data name="View_Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="View_DateFormatError" xml:space="preserve">
+    <value>فرمت تاریخ درست نمی باشد</value>
+  </data>
+  <data name="View_Answer" xml:space="preserve">
+    <value>پاسخ</value>
+  </data>
+  <data name="View_Option" xml:space="preserve">
+    <value>گزینه</value>
+  </data>
+  <data name="View_PollDetail" xml:space="preserve">
+    <value>جزییات سوال</value>
+  </data>
+  <data name="View_PollOptions" xml:space="preserve">
+    <value>پاسخ های مرتبط با سوال</value>
+  </data>
+  <data name="View_PollResult" xml:space="preserve">
+    <value>نمودار پاسخ ها</value>
+  </data>
+  <data name="View_DateConflictError" xml:space="preserve">
+    <value>تداخل در زمان بندی نظر سنجی وجود دارد</value>
+  </data>
+  <data name="View_EditPostCategory" xml:space="preserve">
+    <value>ویرایش شاخه</value>
+  </data>
+  <data name="User_StartSearch" xml:space="preserve">
+    <value>جستجو کن ...</value>
+  </data>
+  <data name="User_SearchResultNotFound" xml:space="preserve">
+    <value>با عرض پوزش مورد جست و جوی شما یافت نشد !</value>
+  </data>
+  <data name="CMS_Name" xml:space="preserve">
+    <value>آزمون سولدا</value>
+  </data>
+  <data name="Unauthorized_Access_Error" xml:space="preserve">
+    <value>شما مجوز دسترسی به این بخش را ندارید.</value>
+  </data>
+  <data name="View_ValidationError_ConfirmPassword" xml:space="preserve">
+    <value>تاییدیه کلمه عبور نامعتبر است</value>
+  </data>
+  <data name="View_ValidationError_Password" xml:space="preserve">
+    <value>حداقل تعداد کاراکتر کلمه عبور نبایستی کمتر از 6 باشد</value>
+  </data>
+  <data name="PageTittle_ManageAccount" xml:space="preserve">
+    <value>مدیریت حساب کاربری</value>
+  </data>
+  <data name="NotFound_Error" xml:space="preserve">
+    <value>آیتم مورد نظر یافت نشد.</value>
+  </data>
+  <data name="PageTittle_Description_AddPostSubCategory" xml:space="preserve">
+    <value>در این بخش می توانید زیر شاخه جدید برای منوها تعریف کنید.</value>
+  </data>
+  <data name="PageTittle_Description_EditPostSubCategory" xml:space="preserve">
+    <value>در این بخش می توانید اطلاعات زیر شاخه را تغییر دهید.</value>
+  </data>
+  <data name="PageTittle_Tittle_EditPostSubCategory" xml:space="preserve">
+    <value>ویرایش زیر شاخه</value>
+  </data>
+  <data name="PageTittle_EditPollQuestion" xml:space="preserve">
+    <value>ویرایش نظر سنجی</value>
+  </data>
+  <data name="PageTittle_DetailPollQuestion" xml:space="preserve">
+    <value>جزییات نظرسنجی</value>
+  </data>
+  <data name="PageTittle_TelegramManagementPannel" xml:space="preserve">
+    <value>مدیریت کانال تلگرام</value>
+  </data>
+  <data name="View_User_Description" xml:space="preserve">
+    <value>شبکه مدیریت یکپارچه محتوی (هزاره سوم)</value>
+  </data>
+  <data name="View_News" xml:space="preserve">
+    <value>اخبار</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>شورا ما</value>
+  </data>
+  <data name="UserInformation_AccountName" xml:space="preserve">
+    <value>نام حساب کاربری</value>
+  </data>
+  <data name="View_AddPhoto" xml:space="preserve">
+    <value>اضافه کردن تصویر</value>
+  </data>
+  <data name="View_ListPhoto" xml:space="preserve">
+    <value>لیست تصاویر</value>
+  </data>
+  <data name="View_ManageFolder" xml:space="preserve">
+    <value>مدیریت پرونده</value>
+  </data>
+  <data name="View_PhotosGallery" xml:space="preserve">
+    <value>گالری تصاویر</value>
+  </data>
+  <data name="PageTittle_AddPhoto" xml:space="preserve">
+    <value>ثبت تصویر جدید</value>
+  </data>
+  <data name="PageTittle_ListPhoto" xml:space="preserve">
+    <value>لیست تصاویر</value>
+  </data>
+  <data name="View_CroperDescription" xml:space="preserve">
+    <value>در صورت تمایل می توانید تصویر انتخابی خود را برش دهید </value>
+  </data>
+  <data name="View_ImageText" xml:space="preserve">
+    <value>متن همراه تصویر :</value>
+  </data>
+  <data name="View_PhotoInformation" xml:space="preserve">
+    <value>اطلاعات تصویر مورد نظر</value>
+  </data>
+  <data name="View_SelectFolder" xml:space="preserve">
+    <value>پرونده مورد نظر را انتخاب کنید</value>
+  </data>
+  <data name="PageTittle_ManageFolder" xml:space="preserve">
+    <value>مدیریت پرونده</value>
+  </data>
+  <data name="View_FolderName" xml:space="preserve">
+    <value>نام پرونده</value>
+  </data>
+  <data name="View_ImageCount" xml:space="preserve">
+    <value>تعداد تصاویر</value>
+  </data>
+  <data name="View_CreateNewFolder" xml:space="preserve">
+    <value>ایجاد پوشه جدید</value>
+  </data>
+  <data name="View_EnterFolderName" xml:space="preserve">
+    <value>نام مورد نظر جهت نام گذاری پرونده را وارد کنید</value>
+  </data>
+  <data name="View_EditNewFolder" xml:space="preserve">
+    <value>ویرایش پرونده</value>
+  </data>
+  <data name="PageTittle_EditFolder" xml:space="preserve">
+    <value>ویرایش پرونده</value>
+  </data>
+  <data name="View_EditFolder" xml:space="preserve">
+    <value>ویرایش پرونده</value>
+  </data>
+  <data name="View_SureAllImagesDeleted" xml:space="preserve">
+    <value>آیا اطمینان خاطر دارید ؟ تمامی عکس های موجود در این پرونده هم پاک خواهند شد</value>
+  </data>
+  <data name="PageTittle_EditPhoto" xml:space="preserve">
+    <value>ویرایش تصویر</value>
+  </data>
+  <data name="PageTittle_EditContact" xml:space="preserve">
+    <value>مدیریت ارتباط با ما</value>
+  </data>
+  <data name="View_Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="View_ContactManagement" xml:space="preserve">
+    <value>اطلاعات ارتباط با ما</value>
+  </data>
+  <data name="View_Email" xml:space="preserve">
+    <value>پست الکترونیک</value>
+  </data>
+  <data name="View_Fax" xml:space="preserve">
+    <value>فکس</value>
+  </data>
+  <data name="View_Phone" xml:space="preserve">
+    <value>تلفن تماس</value>
+  </data>
+  <data name="View_Facebook" xml:space="preserve">
+    <value>لینک فیس بوک</value>
+  </data>
+  <data name="View_Instagram" xml:space="preserve">
+    <value>لینک اینستاگرام</value>
+  </data>
+  <data name="View_Telegram" xml:space="preserve">
+    <value>لینک تلگرام</value>
+  </data>
+  <data name="View_Twitter" xml:space="preserve">
+    <value>لینک تویتر</value>
+  </data>
+  <data name="View_AddSlide" xml:space="preserve">
+    <value>اضافه کردن اسلاید</value>
+  </data>
+  <data name="View_ListSlide" xml:space="preserve">
+    <value>لیست اسلاید ها</value>
+  </data>
+  <data name="View_SlideManagement" xml:space="preserve">
+    <value>مدیریت اسلایدر</value>
+  </data>
+  <data name="PageTittle_AddSlide" xml:space="preserve">
+    <value>اضافه کردن اسلاید</value>
+  </data>
+  <data name="PageTittle_EditSlide" xml:space="preserve">
+    <value>ویرایش اسلاید</value>
+  </data>
+  <data name="PageTittle_ListSlide" xml:space="preserve">
+    <value>لیست اسلایدها</value>
+  </data>
+  <data name="View_Photo" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="View_Priority" xml:space="preserve">
+    <value>اولویت</value>
+  </data>
+  <data name="View_SlideDescription" xml:space="preserve">
+    <value>خلاصه اسلاید</value>
+  </data>
+  <data name="View_SlideTitle" xml:space="preserve">
+    <value>تیتر اسلاید</value>
+  </data>
+  <data name="View_Url" xml:space="preserve">
+    <value>لینک</value>
+  </data>
+  <data name="View_EnterYourUrl" xml:space="preserve">
+    <value>لینک مورد نظر را وارد کنید</value>
+  </data>
+  <data name="View_Tools" xml:space="preserve">
+    <value>ابزار</value>
+  </data>
+  <data name="View_AreYouShureForDelete" xml:space="preserve">
+    <value>آیا اطمینان خاطر دارید که مورد انتخابی را حذف کنید ؟</value>
+  </data>
+  <data name="View_EditFooterLinks" xml:space="preserve">
+    <value>پیوند های فوتر</value>
+  </data>
+  <data name="View_EditMainLinks" xml:space="preserve">
+    <value>پیوند های صفحات</value>
+  </data>
+  <data name="View_LinksManagement" xml:space="preserve">
+    <value>مدیریت پیوند ها</value>
+  </data>
+  <data name="PageTittle_EditMainLinks" xml:space="preserve">
+    <value>ویرایش پیوندهای صفحه اصلی</value>
+  </data>
+  <data name="PageTittle_ListMainLinks" xml:space="preserve">
+    <value>لیست پیوند های صفحه اصلی</value>
+  </data>
+  <data name="PageTittle_EditFooterLinks" xml:space="preserve">
+    <value>ویرایش پیوندهای فوتر</value>
+  </data>
+  <data name="PageTittle_ListFooterLinks" xml:space="preserve">
+    <value>لیست پیوند های فوتر</value>
+  </data>
+  <data name="View_InternetAddress" xml:space="preserve">
+    <value>آدرس اینترنتی</value>
+  </data>
+  <data name="View_LinkInformation" xml:space="preserve">
+    <value>اطلاعات لینک</value>
+  </data>
+  <data name="View_LinkText" xml:space="preserve">
+    <value>متن لینک</value>
+  </data>
+  <data name="View_Row" xml:space="preserve">
+    <value>ردیف</value>
+  </data>
+  <data name="PageTittle_EditScripts" xml:space="preserve">
+    <value>ویرایش اسکریپت ها</value>
+  </data>
+  <data name="View_EditScripts" xml:space="preserve">
+    <value>ویرایش اسکریپت ها</value>
+  </data>
+  <data name="View_ScriptManagement" xml:space="preserve">
+    <value>مدیریت اسکریپت ها</value>
+  </data>
+  <data name="View_ScriptPreShow" xml:space="preserve">
+    <value>پیش نمایش اسکریپت وارد شده</value>
+  </data>
+  <data name="View_ScriptPreShowButton" xml:space="preserve">
+    <value>نمایش اسکریپت ورودی</value>
+  </data>
+  <data name="View_ScriptShow" xml:space="preserve">
+    <value>نمایش اسکریپت فعلی</value>
+  </data>
+  <data name="PollAnswer_AnswerColor" xml:space="preserve">
+    <value>رنگ نمودار</value>
+  </data>
+  <data name="PollAnswer_AnswerText" xml:space="preserve">
+    <value>متن گزینه</value>
+  </data>
+  <data name="PollAnswer_ChooseColor" xml:space="preserve">
+    <value>رنگ مورد نظر ...</value>
+  </data>
+  <data name="PollQuestion_ChartType" xml:space="preserve">
+    <value>نوع نمودار</value>
+  </data>
+  <data name="View_Anonymous" xml:space="preserve">
+    <value>نامشخص</value>
+  </data>
+  <data name="View_BarChart" xml:space="preserve">
+    <value>نمودار میله ای</value>
+  </data>
+  <data name="View_DoughnutChart" xml:space="preserve">
+    <value>نمودار حلقه ای</value>
+  </data>
+  <data name="View_PieChart" xml:space="preserve">
+    <value>نمودار دایره ای</value>
+  </data>
+  <data name="PageTittle_TicketChartManagement" xml:space="preserve">
+    <value>مدیریت نمودار درخواست ها</value>
+  </data>
+  <data name="View_ChartBeOrNot" xml:space="preserve">
+    <value>نمایش نمودار در سایت</value>
+  </data>
+  <data name="View_ChartInformation" xml:space="preserve">
+    <value>اطلاعات نمودار </value>
+  </data>
+  <data name="View_Checking" xml:space="preserve">
+    <value>در حال بررسی</value>
+  </data>
+  <data name="View_Enter" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="View_Responded" xml:space="preserve">
+    <value>پاسخ داده شده</value>
+  </data>
+  <data name="View_ShowChart" xml:space="preserve">
+    <value>نمایش نمودار</value>
+  </data>
+  <data name="View_TicketChartManagement" xml:space="preserve">
+    <value>مدیریت نمودار درخواست ها</value>
+  </data>
+  <data name="View_Waiting" xml:space="preserve">
+    <value>در وضعیت انتظار</value>
+  </data>
+  <data name="View_StyleManagement" xml:space="preserve">
+    <value>مدیریت رنگ وب سایت</value>
+  </data>
+  <data name="PageTittle_StylingManagement" xml:space="preserve">
+    <value>مدیریت رنگ سایت</value>
+  </data>
+  <data name="View_FooterColor" xml:space="preserve">
+    <value>رنگ فوتر پایینی</value>
+  </data>
+  <data name="View_MenuHoverColor" xml:space="preserve">
+    <value>رنگ منو (وقتی نشانگر روی آن قرار میگیرد)</value>
+  </data>
+  <data name="View_MidFooterColor" xml:space="preserve">
+    <value>رنگ فوتر میانی</value>
+  </data>
+  <data name="View_MidSliderColor" xml:space="preserve">
+    <value>رنگ اسلایدر میانی</value>
+  </data>
+  <data name="View_PersonalMessagePannelColor" xml:space="preserve">
+    <value>رنگ پیام شخص</value>
+  </data>
+  <data name="View_SearchButtonColor" xml:space="preserve">
+    <value>رنگ کلید جست و جو</value>
+  </data>
+  <data name="View_SearchPannelColor" xml:space="preserve">
+    <value>رنگ پنل جست و جو</value>
+  </data>
+  <data name="View_SliderContentpannelColor" xml:space="preserve">
+    <value>رنگ متن اسلایدر</value>
+  </data>
+  <data name="View_SpecialMenuItemColor" xml:space="preserve">
+    <value>رنگ کلید مخصوص منو</value>
+  </data>
+  <data name="View_SpecialMenuItemHoverColor" xml:space="preserve">
+    <value>رنگ کلید مخصوص منو (وقتی نشانگر روی آن قرار میگیرد)</value>
+  </data>
+  <data name="View_TelegramSquare" xml:space="preserve">
+    <value>رنگ کلید تلگرام</value>
+  </data>
+  <data name="View_SlidePriority" xml:space="preserve">
+    <value>اولویت اسلاید </value>
+  </data>
+  <data name="AppilicationVersion" xml:space="preserve">
+    <value>نسخه 1.0.0</value>
+  </data>
+  <data name="PageTittle_AddPost" xml:space="preserve">
+    <value>افزودن مطلب </value>
+  </data>
+  <data name="PageTittle_EditPost" xml:space="preserve">
+    <value>ویرایش مطلب</value>
+  </data>
+  <data name="PageTittle_ListPost" xml:space="preserve">
+    <value>لیست صفحات پویا</value>
+  </data>
+  <data name="PageTittle_PostSuccess" xml:space="preserve">
+    <value>موفقیت در ثبت مطلب</value>
+  </data>
+  <data name="View_SelectYourSubCategory" xml:space="preserve">
+    <value>زیر شاخه مورد نظر را انتخاب کنید</value>
+  </data>
+  <data name="View_AddPost" xml:space="preserve">
+    <value>افزودن مطلب جدید</value>
+  </data>
+  <data name="View_ListPost" xml:space="preserve">
+    <value>لیست صفحات پویا</value>
+  </data>
+  <data name="View_PostManagement" xml:space="preserve">
+    <value>مدیریت صفحات پویا</value>
+  </data>
+  <data name="View_PostSubCategory" xml:space="preserve">
+    <value>نام زیر شاخه</value>
+  </data>
+  <data name="PostNotFound" xml:space="preserve">
+    <value>مطلب مورد نظر یافت نشد !</value>
+  </data>
+  <data name="PageTittle_ListPages" xml:space="preserve">
+    <value>لیست صفحات ایستا</value>
+  </data>
+  <data name="View_StaticPagesManagement" xml:space="preserve">
+    <value>مدیریت صفحات ایستا</value>
+  </data>
+  <data name="View_SelectedStaticPage" xml:space="preserve">
+    <value>محتوی صفحه ایستای انتخابی</value>
+  </data>
+  <data name="View_Category" xml:space="preserve">
+    <value>شاخه</value>
+  </data>
+  <data name="View_SubCategory" xml:space="preserve">
+    <value>زیرشاخه</value>
+  </data>
+  <data name="View_SelectYourPage" xml:space="preserve">
+    <value>صفحه مورد نظر را انتخاب کنید</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>صفحه مورد نظر یافت نشد !</value>
+  </data>
+  <data name="View_ForInsertingTags" xml:space="preserve">
+    <value>جهت وارد کردن تگ ، کلید Enter را پس از تایپ هر تگ فشار دهید</value>
+  </data>
+  <data name="PageTittle_Description_ListMasters" xml:space="preserve">
+    <value>شما در این بخش می توانید تمامی اساتید ثبت نام شده را مشاهده کنید</value>
+  </data>
+  <data name="PageTittle_Tittle_AddMaster" xml:space="preserve">
+    <value>افزودن استاد جدید</value>
+  </data>
+  <data name="PageTittle_Tittle_EditMaster" xml:space="preserve">
+    <value>ویرایش استاد</value>
+  </data>
+  <data name="PageTittle_Tittle_ListMasters" xml:space="preserve">
+    <value>لیست اساتید</value>
+  </data>
+  <data name="View_AddAzmoon" xml:space="preserve">
+    <value>افزودن آزمون جدید</value>
+  </data>
+  <data name="View_AddMasters" xml:space="preserve">
+    <value>افزودن استاد جدید</value>
+  </data>
+  <data name="View_AddStudents" xml:space="preserve">
+    <value>افزودن دانش آموز جدید</value>
+  </data>
+  <data name="View_ListAzmoon" xml:space="preserve">
+    <value>لیست آزمون ها</value>
+  </data>
+  <data name="View_ListMasters" xml:space="preserve">
+    <value>لیست اساتید</value>
+  </data>
+  <data name="View_ListStudents" xml:space="preserve">
+    <value>لیست دانش آموزان</value>
+  </data>
+  <data name="View_Reporting" xml:space="preserve">
+    <value>گزارشگیری</value>
+  </data>
+  <data name="PageTittle_AddMaster" xml:space="preserve">
+    <value>افزودن استاد جدید</value>
+  </data>
+  <data name="PageTittle_AddStudents" xml:space="preserve">
+    <value>افزودن دانش آموز جدید</value>
+  </data>
+  <data name="PageTittle_Description_AddStudent" xml:space="preserve">
+    <value>در این قسمت می توانید دانش آموز جدید ثبت کنید</value>
+  </data>
+  <data name="PageTittle_Description_EditMaster" xml:space="preserve">
+    <value>در این قسمت می توانید مشخصات استاد مورد نظر را ویرایش کنید</value>
+  </data>
+  <data name="PageTittle_Description_EditStudent" xml:space="preserve">
+    <value>در این قسمت می توانید مشخصات دانش آموز مورد نظر را ویرایش کنید</value>
+  </data>
+  <data name="PageTittle_Description_ListStudents" xml:space="preserve">
+    <value>در این قسمت می توانید لیست دانش آموزان را مشاهده کنید</value>
+  </data>
+  <data name="PageTittle_Tittle_AddStudents" xml:space="preserve">
+    <value>افزودن دانش آموز جدید</value>
+  </data>
+  <data name="PageTittle_Tittle_EditStudent" xml:space="preserve">
+    <value>ویرایش مشخصات دانش آموز</value>
+  </data>
+  <data name="PageTittle_Tittle_ListStudents" xml:space="preserve">
+    <value>لیست دانش آموزان</value>
+  </data>
+  <data name="PageTittle_AddAzmoon" xml:space="preserve">
+    <value>افزودن آزمون جدید</value>
+  </data>
+  <data name="PageTittle_Description_AddAzmoon" xml:space="preserve">
+    <value>در این قسمت می توانید آزمون جدیدی اضافه کنید</value>
+  </data>
+  <data name="PageTittle_Description_EditAzmoon" xml:space="preserve">
+    <value>در این قسمت می توانید آزمون مورد نظر را ویرایش کنید</value>
+  </data>
+  <data name="PageTittle_Description_ListAzmoon" xml:space="preserve">
+    <value>در این قسمت می توانید لیست آزمون ها را مشاهده کنید</value>
+  </data>
+  <data name="PageTittle_Tittle_EditAzmoon" xml:space="preserve">
+    <value>ویرایش آزمون</value>
+  </data>
+  <data name="PageTittle_Tittle_ListAzmoon" xml:space="preserve">
+    <value>لیست آزمون ها</value>
+  </data>
+  <data name="View_Azmoon" xml:space="preserve">
+    <value>آزمون</value>
+  </data>
+  <data name="PageTittle_AddSoalat" xml:space="preserve">
+    <value>افزودن سوال جدید</value>
+  </data>
+  <data name="PageTittle_Description_ListSoalat" xml:space="preserve">
+    <value>شما در این بخش می توانید لیست سوالات آزمون انتخابی مورد نظر را مشاهده کنید</value>
+  </data>
+  <data name="PageTittle_DetailSoalat" xml:space="preserve">
+    <value>جزئیات سوال</value>
+  </data>
+  <data name="PageTittle_EditSoalat" xml:space="preserve">
+    <value>ویرایش سوالات</value>
+  </data>
+  <data name="PageTittle_Tittle_ListSoalat" xml:space="preserve">
+    <value>لیست سوالات</value>
+  </data>
+  <data name="PageTittle_Description_AddMasters" xml:space="preserve">
+    <value>در این بخش می توانید استاد جدیدی اضافه کنید</value>
+  </data>
+</root>

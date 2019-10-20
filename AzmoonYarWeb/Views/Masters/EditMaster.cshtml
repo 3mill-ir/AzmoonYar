@@ -1,0 +1,97 @@
+﻿@model AzmoonYarWeb.Models.MasterModel
+@section CSS_Requested{
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+}
+@section js_Requested{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/spin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/ladda.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+}
+@section js_Handler{
+    <script src="~/Content/AdminContent/assets/js/form-elements.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-buttons.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            FormElements.init();
+            UIButtons.init();
+            UINotifications.init("@ViewBag.Result");
+        });
+    </script>
+
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <div class="container-fluid container-fullw padding-bottom-10">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="main-login col-md-8 col-md-push-2">
+                    <!-- start: REGISTER BOX -->
+                    <div class="box-register">
+                        <fieldset>
+                            <legend>
+                                اطلاعات استاد
+                            </legend>
+                            <div class="row">
+                                <div class="col-md-10 col-md-push-1">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.FirstName)
+                                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "نام" })
+                                        @Html.ValidationMessageFor(model => model.FirstName)
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-md-push-1">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.LastName)
+                                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "نام خانوادگی" })
+                                        @Html.ValidationMessageFor(model => model.LastName)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-push-1">
+                                @Html.LabelFor(model => model.PhoneNumber)
+                                <div class="input-group" style=" width: 85%;">
+                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control input-mask-phone mypipostyle", Id = "form-fieldt-mask-2", placeholder = " (9**) ***-**** شماره همراه", style = "direction: ltr;" })
+                                    <span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.PhoneNumber)
+                            </div>
+                            <div class="form-group col-md-push-1">
+                                @Html.LabelFor(model => model.Email)
+                                <div class="input-group" style=" width: 85%;">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "ایمیل" })  <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </fieldset>
+                        <div style="text-align:left">
+                            <button type="submit" style="width:100%;" class="btn btn-wide btn-dark-green ladda-button " data-style="zoom-in">
+                                <span class="ladda-label">@Resource.Resource.Edit</span>
+                            </button>
+                        </div>
+                    </div>
+                    @Html.HiddenFor(model => model.ID)
+                    <!-- end: REGISTER BOX -->
+                </div>
+            }
+        </div>
+    </div>
+</div>

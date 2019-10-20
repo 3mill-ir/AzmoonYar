@@ -1,0 +1,109 @@
+﻿@model PagedList.IPagedList<AzmoonYarWeb.Models.AzmoonModel>
+@using PagedList.Mvc;
+@section js_Handler
+{
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+        });
+        $("a[id^='PipoModalLink_']").click('action', function () {
+            var temp = $(this).attr('id').split("_");
+            var myid = temp[1];
+            $("#PipoModalBody").empty();
+            $("#PipoModalBody").append('<p> @Resource.Resource.View_AreYouShure </p>');
+            var $self = $("#PipoModalForm");
+            $self.attr('action', '/Azmoon/ChangeStatusAzmoon?AzmoonId=' + myid + "&Page=" + '@ViewBag.PaginationCount');
+        });
+    </script>
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC TABLE -->
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover " id="sample-table-1">
+                            <thead>
+                                <tr>
+                                    <th class="center">@Html.DisplayName("شناسه")</th>
+                                    <th class="center">@Html.DisplayName("نام آزمون")</th>
+                                    <th class="center">@Html.DisplayName("تاریخ شروع")</th>
+                                    <th class="center">@Html.DisplayName("تاریخ پایان")</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    string PipoStyle = "";
+                                    if (item.IsActive == true)
+                                    {
+                                        PipoStyle = "background-color:lightgreen;";
+                                    }
+                                    <tr style="@PipoStyle">
+                                        <td class="center">@Html.DisplayFor(modelItem => item.ID)</td>
+                                        <td class="center">@Html.DisplayFor(modelItem => item.Name)</td>
+                                        <td class="center" style="direction:ltr;">@Html.DisplayFor(modelItem => item.StartDateOnUtcJalali)</td>
+                                        <td class="center" style="direction:ltr;">@Html.DisplayFor(modelItem => item.EndDateOnUtcJalali)</td>
+                                        <td class="center">
+                                            <div class="visible-md visible-lg visible-sm visible-xs">
+                                                <a href="@Url.Action("EditAzmoon", "Azmoon", new { AzmoonId = item.ID, Page = ViewBag.PaginationCount })" class="btn btn-transparent btn-xs" data-toggle="tooltip" data-placement="top" title="ویرایش"><i class="fa fa-pencil"></i></a>
+                                                <a href="@Url.Action("ListSoalat", "Soalat", new { AzmoonId = item.ID, Page = ViewBag.PaginationCount})" class="btn btn-transparent btn-xs" data-toggle="tooltip" data-placement="top" title="لیست سوالات"><i class="fa fa-list"></i></a>
+                                                <a id="PipoModalLink_@item.ID" class="btn btn-transparent btn-xs tooltips" data-toggle="tooltip" data-placement="top" title="حذف"><i class="fa fa-times fa-white" data-toggle="modal" data-target="#PipoModal"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4 col-md-offset-5">
+                            <div class="pagination pagination-green margin-bottom-10 center">
+                                صفحه @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) از @Model.PageCount
+                                @Html.PagedListPager(Model, page => Url.Action("ListMasterAzmoon", "Azmoon", new { page }))
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end: BASIC TABLE -->
+        <div class="modal fade" id="PipoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title center" id="myModalLabel">
+                            <img src="~/Content/AdminContent/z3mill/alert-icon.png" alt="Alert" height="81" width="90" />
+                        </h4>
+                    </div>
+                    <div id="PipoModalBody" class="modal-body">
+                        @Resource.Resource.View_AreYouShure
+                    </div>
+                    @using (Html.BeginForm("ChangeStatusAzmoon", "Azmoon", new { AzmoonId = "_AzmoonId_", Page = ViewBag.PaginationCount }, FormMethod.Post, new { Id = "PipoModalForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                @Resource.Resource.View_Close
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                @Resource.Resource.View_Yes
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

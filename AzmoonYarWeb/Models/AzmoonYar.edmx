@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="soldaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Azmoon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CreateDateOnUtc" Type="datetime" />
+          <Property Name="F_UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="StartDateOnUtc" Type="datetime" />
+          <Property Name="EndDateOnUtc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mapping_Profile_Azmoon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_AzmoonId" Type="int" />
+          <Property Name="F_ProfileId" Type="int" />
+          <Property Name="CreateDateOnUtc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mapping_Profile_Pasokh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_PasokhId" Type="int" />
+          <Property Name="F_ProfileId" Type="int" />
+          <Property Name="CreateDateOnUtc" Type="datetime" />
+          <Property Name="SoalId" Type="int" />
+        </EntityType>
+        <EntityType Name="Pasokh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnswerText" Type="nvarchar(max)" />
+          <Property Name="AnswerKey" Type="int" />
+          <Property Name="Score" Type="int" />
+          <Property Name="F_SoalatId" Type="int" />
+          <Property Name="EditDateOnUtc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tell" Type="nvarchar(max)" />
+          <Property Name="CodeMelli" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="CreateDateOnUtc" Type="datetime" />
+          <Property Name="EditDateOnUtc" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Soalat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar(max)" />
+          <Property Name="CreateDateOnUtc" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="F_AzmoonId" Type="int" />
+          <Property Name="Pasokh" Type="int" />
+          <Property Name="SoalNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Azmoon_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Azmoon" Type="Self.Azmoon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Azmoon">
+              <PropertyRef Name="F_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Profile_Azmoon_Azmoon">
+          <End Role="Azmoon" Type="Self.Azmoon" Multiplicity="0..1" />
+          <End Role="Mapping_Profile_Azmoon" Type="Self.Mapping_Profile_Azmoon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Azmoon">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Azmoon">
+              <PropertyRef Name="F_AzmoonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Profile_Azmoon_Profile">
+          <End Role="Profile" Type="Self.Profile" Multiplicity="0..1" />
+          <End Role="Mapping_Profile_Azmoon" Type="Self.Mapping_Profile_Azmoon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Azmoon">
+              <PropertyRef Name="F_ProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Profile_Pasokh_Pasokh">
+          <End Role="Pasokh" Type="Self.Pasokh" Multiplicity="0..1" />
+          <End Role="Mapping_Profile_Pasokh" Type="Self.Mapping_Profile_Pasokh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pasokh">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Pasokh">
+              <PropertyRef Name="F_PasokhId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Profile_Pasokh_Profile">
+          <End Role="Profile" Type="Self.Profile" Multiplicity="0..1" />
+          <End Role="Mapping_Profile_Pasokh" Type="Self.Mapping_Profile_Pasokh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Pasokh">
+              <PropertyRef Name="F_ProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasokh_Soalat">
+          <End Role="Soalat" Type="Self.Soalat" Multiplicity="0..1" />
+          <End Role="Pasokh" Type="Self.Pasokh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Soalat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pasokh">
+              <PropertyRef Name="F_SoalatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Soalat_Azmoon">
+          <End Role="Azmoon" Type="Self.Azmoon" Multiplicity="0..1" />
+          <End Role="Soalat" Type="Self.Soalat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Azmoon">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Soalat">
+              <PropertyRef Name="F_AzmoonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="soldaModelStoreContainer">
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Azmoon" EntityType="Self.Azmoon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mapping_Profile_Azmoon" EntityType="Self.Mapping_Profile_Azmoon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mapping_Profile_Pasokh" EntityType="Self.Mapping_Profile_Pasokh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pasokh" EntityType="Self.Pasokh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Soalat" EntityType="Self.Soalat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Azmoon_AspNetUsers" Association="Self.FK_Azmoon_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Azmoon" EntitySet="Azmoon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Profile_Azmoon_Azmoon" Association="Self.FK_Mapping_Profile_Azmoon_Azmoon">
+            <End Role="Azmoon" EntitySet="Azmoon" />
+            <End Role="Mapping_Profile_Azmoon" EntitySet="Mapping_Profile_Azmoon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Profile_Azmoon_Profile" Association="Self.FK_Mapping_Profile_Azmoon_Profile">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Mapping_Profile_Azmoon" EntitySet="Mapping_Profile_Azmoon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Profile_Pasokh_Pasokh" Association="Self.FK_Mapping_Profile_Pasokh_Pasokh">
+            <End Role="Pasokh" EntitySet="Pasokh" />
+            <End Role="Mapping_Profile_Pasokh" EntitySet="Mapping_Profile_Pasokh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Profile_Pasokh_Profile" Association="Self.FK_Mapping_Profile_Pasokh_Profile">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Mapping_Profile_Pasokh" EntitySet="Mapping_Profile_Pasokh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasokh_Soalat" Association="Self.FK_Pasokh_Soalat">
+            <End Role="Soalat" EntitySet="Soalat" />
+            <End Role="Pasokh" EntitySet="Pasokh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Soalat_Azmoon" Association="Self.FK_Soalat_Azmoon">
+            <End Role="Azmoon" EntitySet="Azmoon" />
+            <End Role="Soalat" EntitySet="Soalat" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="soldaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Mapping_Profile_Azmoon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_AzmoonId" Type="Int32" />
+          <Property Name="F_ProfileId" Type="Int32" />
+          <Property Name="CreateDateOnUtc" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Profile" Relationship="Self.FK_Mapping_Profile_Azmoon_Profile" FromRole="Mapping_Profile_Azmoon" ToRole="Profile" />
+          <NavigationProperty Name="Azmoon" Relationship="soldaModel.FK_Mapping_Profile_Azmoon_Azmoon" FromRole="Mapping_Profile_Azmoon" ToRole="Azmoon" />
+        </EntityType>
+        <EntityType Name="Mapping_Profile_Pasokh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_PasokhId" Type="Int32" />
+          <Property Name="F_ProfileId" Type="Int32" />
+          <Property Name="CreateDateOnUtc" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Pasokh" Relationship="Self.FK_Mapping_Profile_Pasokh_Pasokh" FromRole="Mapping_Profile_Pasokh" ToRole="Pasokh" />
+          <NavigationProperty Name="Profile" Relationship="Self.FK_Mapping_Profile_Pasokh_Profile" FromRole="Mapping_Profile_Pasokh" ToRole="Profile" />
+          <Property Name="SoalId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Pasokh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnswerText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnswerKey" Type="Int32" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="F_SoalatId" Type="Int32" />
+          <Property Name="EditDateOnUtc" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Mapping_Profile_Pasokh" Relationship="Self.FK_Mapping_Profile_Pasokh_Pasokh" FromRole="Pasokh" ToRole="Mapping_Profile_Pasokh" />
+          <NavigationProperty Name="Soalat" Relationship="Self.FK_Pasokh_Soalat" FromRole="Pasokh" ToRole="Soalat" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tell" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeMelli" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="EditDateOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Mapping_Profile_Azmoon" Relationship="Self.FK_Mapping_Profile_Azmoon_Profile" FromRole="Profile" ToRole="Mapping_Profile_Azmoon" />
+          <NavigationProperty Name="Mapping_Profile_Pasokh" Relationship="Self.FK_Mapping_Profile_Pasokh_Profile" FromRole="Profile" ToRole="Mapping_Profile_Pasokh" />
+        </EntityType>
+        <EntityType Name="Soalat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="F_AzmoonId" Type="Int32" />
+          <Property Name="Pasokh" Type="Int32" />
+          <NavigationProperty Name="Pasokhs" Relationship="Self.FK_Pasokh_Soalat" FromRole="Soalat" ToRole="Pasokh" />
+          <NavigationProperty Name="Azmoon" Relationship="soldaModel.FK_Soalat_Azmoon" FromRole="Soalat" ToRole="Azmoon" />
+          <Property Name="SoalNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Mapping_Profile_Azmoon_Profile">
+          <End Role="Profile" Type="Self.Profile" Multiplicity="0..1" />
+          <End Role="Mapping_Profile_Azmoon" Type="Self.Mapping_Profile_Azmoon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Azmoon">
+              <PropertyRef Name="F_ProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Profile_Pasokh_Pasokh">
+          <End Role="Pasokh" Type="Self.Pasokh" Multiplicity="0..1" />
+          <End Role="Mapping_Profile_Pasokh" Type="Self.Mapping_Profile_Pasokh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pasokh">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Pasokh">
+              <PropertyRef Name="F_PasokhId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Profile_Pasokh_Profile">
+          <End Role="Profile" Type="Self.Profile" Multiplicity="0..1" />
+          <End Role="Mapping_Profile_Pasokh" Type="Self.Mapping_Profile_Pasokh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Pasokh">
+              <PropertyRef Name="F_ProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasokh_Soalat">
+          <End Role="Soalat" Type="Self.Soalat" Multiplicity="0..1" />
+          <End Role="Pasokh" Type="Self.Pasokh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Soalat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pasokh">
+              <PropertyRef Name="F_SoalatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mapping_Profile_Azmoon" EntityType="Self.Mapping_Profile_Azmoon" />
+          <EntitySet Name="Mapping_Profile_Pasokh" EntityType="Self.Mapping_Profile_Pasokh" />
+          <EntitySet Name="Pasokhs" EntityType="Self.Pasokh" />
+          <EntitySet Name="Profiles" EntityType="Self.Profile" />
+          <EntitySet Name="Soalats" EntityType="Self.Soalat" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Mapping_Profile_Azmoon_Profile" Association="Self.FK_Mapping_Profile_Azmoon_Profile">
+            <End Role="Profile" EntitySet="Profiles" />
+            <End Role="Mapping_Profile_Azmoon" EntitySet="Mapping_Profile_Azmoon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Profile_Pasokh_Pasokh" Association="Self.FK_Mapping_Profile_Pasokh_Pasokh">
+            <End Role="Pasokh" EntitySet="Pasokhs" />
+            <End Role="Mapping_Profile_Pasokh" EntitySet="Mapping_Profile_Pasokh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Profile_Pasokh_Profile" Association="Self.FK_Mapping_Profile_Pasokh_Profile">
+            <End Role="Profile" EntitySet="Profiles" />
+            <End Role="Mapping_Profile_Pasokh" EntitySet="Mapping_Profile_Pasokh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasokh_Soalat" Association="Self.FK_Pasokh_Soalat">
+            <End Role="Soalat" EntitySet="Soalats" />
+            <End Role="Pasokh" EntitySet="Pasokhs" />
+          </AssociationSet>
+          <EntitySet Name="AspNetUsers" EntityType="soldaModel.AspNetUser" />
+          <EntitySet Name="Azmoons" EntityType="soldaModel.Azmoon" />
+          <AssociationSet Name="FK_Azmoon_AspNetUsers" Association="soldaModel.FK_Azmoon_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Azmoon" EntitySet="Azmoons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Profile_Azmoon_Azmoon" Association="soldaModel.FK_Mapping_Profile_Azmoon_Azmoon">
+            <End Role="Azmoon" EntitySet="Azmoons" />
+            <End Role="Mapping_Profile_Azmoon" EntitySet="Mapping_Profile_Azmoon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Soalat_Azmoon" Association="soldaModel.FK_Soalat_Azmoon">
+            <End Role="Azmoon" EntitySet="Azmoons" />
+            <End Role="Soalat" EntitySet="Soalats" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Azmoons" Relationship="soldaModel.FK_Azmoon_AspNetUsers" FromRole="AspNetUser" ToRole="Azmoon" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Azmoon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="F_UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="StartDateOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="EndDateOnUtc" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AspNetUser" Relationship="soldaModel.FK_Azmoon_AspNetUsers" FromRole="Azmoon" ToRole="AspNetUser" />
+          <NavigationProperty Name="Mapping_Profile_Azmoon" Relationship="soldaModel.FK_Mapping_Profile_Azmoon_Azmoon" FromRole="Azmoon" ToRole="Mapping_Profile_Azmoon" />
+          <NavigationProperty Name="Soalats" Relationship="soldaModel.FK_Soalat_Azmoon" FromRole="Azmoon" ToRole="Soalat" />
+        </EntityType>
+        <Association Name="FK_Azmoon_AspNetUsers">
+          <End Type="soldaModel.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+          <End Type="soldaModel.Azmoon" Role="Azmoon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Azmoon">
+              <PropertyRef Name="F_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Profile_Azmoon_Azmoon">
+          <End Type="soldaModel.Azmoon" Role="Azmoon" Multiplicity="0..1" />
+          <End Type="soldaModel.Mapping_Profile_Azmoon" Role="Mapping_Profile_Azmoon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Azmoon">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mapping_Profile_Azmoon">
+              <PropertyRef Name="F_AzmoonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Soalat_Azmoon">
+          <End Type="soldaModel.Azmoon" Role="Azmoon" Multiplicity="0..1" />
+          <End Type="soldaModel.Soalat" Role="Soalat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Azmoon">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Soalat">
+              <PropertyRef Name="F_AzmoonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="soldaModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Mapping_Profile_Azmoon">
+            <EntityTypeMapping TypeName="soldaModel.Mapping_Profile_Azmoon">
+              <MappingFragment StoreEntitySet="Mapping_Profile_Azmoon">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="F_AzmoonId" ColumnName="F_AzmoonId" />
+                <ScalarProperty Name="F_ProfileId" ColumnName="F_ProfileId" />
+                <ScalarProperty Name="CreateDateOnUtc" ColumnName="CreateDateOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mapping_Profile_Pasokh">
+            <EntityTypeMapping TypeName="soldaModel.Mapping_Profile_Pasokh">
+              <MappingFragment StoreEntitySet="Mapping_Profile_Pasokh">
+                <ScalarProperty Name="SoalId" ColumnName="SoalId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="F_PasokhId" ColumnName="F_PasokhId" />
+                <ScalarProperty Name="F_ProfileId" ColumnName="F_ProfileId" />
+                <ScalarProperty Name="CreateDateOnUtc" ColumnName="CreateDateOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pasokhs">
+            <EntityTypeMapping TypeName="soldaModel.Pasokh">
+              <MappingFragment StoreEntitySet="Pasokh">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+                <ScalarProperty Name="AnswerKey" ColumnName="AnswerKey" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="F_SoalatId" ColumnName="F_SoalatId" />
+                <ScalarProperty Name="EditDateOnUtc" ColumnName="EditDateOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="soldaModel.Profile">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tell" ColumnName="Tell" />
+                <ScalarProperty Name="CodeMelli" ColumnName="CodeMelli" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="CreateDateOnUtc" ColumnName="CreateDateOnUtc" />
+                <ScalarProperty Name="EditDateOnUtc" ColumnName="EditDateOnUtc" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Soalats">
+            <EntityTypeMapping TypeName="soldaModel.Soalat">
+              <MappingFragment StoreEntitySet="Soalat">
+                <ScalarProperty Name="SoalNumber" ColumnName="SoalNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="CreateDateOnUtc" ColumnName="CreateDateOnUtc" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="F_AzmoonId" ColumnName="F_AzmoonId" />
+                <ScalarProperty Name="Pasokh" ColumnName="Pasokh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="soldaModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="soldaModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Azmoons">
+            <EntityTypeMapping TypeName="soldaModel.Azmoon">
+              <MappingFragment StoreEntitySet="Azmoon">
+                <ScalarProperty Name="EndDateOnUtc" ColumnName="EndDateOnUtc" />
+                <ScalarProperty Name="StartDateOnUtc" ColumnName="StartDateOnUtc" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="F_UserId" ColumnName="F_UserId" />
+                <ScalarProperty Name="CreateDateOnUtc" ColumnName="CreateDateOnUtc" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+<li class="dropdown current-user">
+    <a href class="dropdown-toggle" data-toggle="dropdown">
+        <img src="~/Content/AdminContent/assets/images/avatar-1.png" alt="User"> <span class="username">@User.Identity.GetUserName()  <i class="ti-angle-down"></i></span>
+    </a>
+    <ul class="dropdown-menu dropdown-dark">
+        @*<li>
+            <a href="pages_user_profile.html">
+     پروفایل
+            </a>
+        </li>*@
+        <li>
+            @Html.ActionLink("مدیریت حساب ", "Manage", "Account")
+        </li>
+        <li>
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <a href="javascript:document.getElementById('logoutForm').submit()">
+                خروج 
+                </a>}
+        </li>
+    </ul>
+</li>
+

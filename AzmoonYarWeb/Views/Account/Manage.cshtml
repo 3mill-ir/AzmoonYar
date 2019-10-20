@@ -1,0 +1,13 @@
+﻿@using AzmoonYarWeb.Models;
+@using Microsoft.AspNet.Identity;
+@if (ViewBag.HasLocalPassword)
+{
+    @Html.Partial("_ChangePasswordPartial")
+}
+else
+{
+    @Html.Partial("_SetPasswordPartial")
+}
+
+
+

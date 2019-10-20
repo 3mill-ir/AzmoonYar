@@ -1,0 +1,247 @@
+﻿@using WebShahrdari.Infrastructure
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- start: HEAD -->
+<head>
+    <title>@Resource.Resource.View_Tittle | @ViewBag.PageTittle_Tittle</title>
+    <!-- start: META -->
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="description" name="@Resource.Resource.View_Description" />
+    <meta content="author" name="@Resource.Resource.View_Author" />
+    <!-- end: META -->
+    <!-- start: GOOGLE FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <!-- end: GOOGLE FONTS -->
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/bootstrap/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/themify-icons/themify-icons.min.css">
+    <link href="~/Content/AdminContent/vendor/animate.css/animate.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/switchery/switchery.min.css" rel="stylesheet" media="screen">
+    <!-- end: MAIN CSS -->
+    <!-- start: 3Mill CSS -->
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/styles.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/plugins.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/themes/theme-5.css" id="skin_color" />
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/rtl.css" />
+    <!-- end: 3Mill CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    @RenderSection("CSS_Requested", required: false)
+    @RenderSection("scripts", required: false)
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+</head>
+<!-- end: HEAD -->
+<body>
+    <div id="app" class="app-navbar-fixed app-footer-fixed app-sidebar-fixed">
+        <!-- sidebar -->
+        <div class="sidebar app-aside" id="sidebar">
+            <div class="sidebar-container perfect-scrollbar">
+                <nav>
+                    <!-- start: MAIN NAVIGATION MENU -->
+                    <div class="navbar-title">
+                        <span>@Resource.Resource.View_MainNavigation_Tittle</span>
+                    </div>
+                    <ul class="main-navigation-menu">
+                        <li class="@Url.MakeActiveController("Home")">
+                            <a href="@Url.Action("Index","Home")">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <span class="fa fa-desktop fa-lg" style="color: #ffffff; "></span>
+                                    </div>
+                                    <div class="item-inner">
+                                        <span class="title"> @Resource.Resource.View_Dashboard </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="@Url.MakeActiveAction("ListMasters")">
+                                <a href="@Url.Action("ListMasters", "Masters")">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="fa fa-group fa-lg" style="color: #ffffff; "></span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title">@Resource.Resource.View_ListMasters</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="@Url.MakeActiveAction("Register")">
+                                <a href="@Url.Action("Register", "Account")">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="fa fa-user-plus fa-lg" style="color: #ffffff; "></span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title">@Resource.Resource.View_AddMasters</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="@Url.MakeActiveAction("ListStudents")">
+                                <a href="@Url.Action("ListStudents", "Students")">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="ti-list fa-lg" style="color: #ffffff; "></span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title">@Resource.Resource.View_ListStudents</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="@Url.MakeActiveAction("AddStudent")">
+                                <a href="@Url.Action("AddStudent", "Students")">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="fa fa-graduation-cap fa-lg" style="color: #ffffff; "></span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title">@Resource.Resource.View_AddStudents</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="@Url.MakeActiveAction("Azmoon")">
+                                <a href="@Url.Action("ListAllAzmoon", "Azmoon")">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="fa fa-area-chart fa-lg" style="color: #ffffff; "></span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title">@Resource.Resource.View_Reporting</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Expert"))
+                        {
+                            <li class="@Url.MakeActiveAction("Azmoon")">
+                                <a href="@Url.Action("ListMasterAzmoon", "Azmoon")">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="fa fa-list-alt fa-lg" style="color: #ffffff; "></span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title">@Resource.Resource.View_ListAzmoon</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="@Url.MakeActiveAction("Azmoon")">
+                                <a href="@Url.Action("AddAzmoon", "Azmoon")">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="fa fa-check-square-o fa-lg" style="color: #ffffff; "></span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title">@Resource.Resource.View_AddAzmoon</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                        
+                    </ul>
+                    <!-- end: MAIN NAVIGATION MENU -->
+                 
+                    <!-- start: DOCUMENTATION BUTTON -->
+                    <div class="wrapper">
+                        <a href="#" class="button-o">
+                            <span>@Resource.Resource.AppilicationVersion</span>
+                        </a>
+                    </div>
+                    <!-- end: DOCUMENTATION BUTTON -->
+                </nav>
+            </div>
+        </div>
+        <!-- / sidebar -->
+        <div class="app-content">
+            <!-- start: TOP NAVBAR -->
+            <header class="navbar navbar-default navbar-static-top">
+                <!-- start: NAVBAR HEADER -->
+                <div class="navbar-header">
+                    <a href="#" class="sidebar-mobile-toggler pull-right hidden-md hidden-lg" class="btn btn-navbar sidebar-toggle" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar">
+                        <i class="ti-align-justify"></i>
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <img src="~/Content/AdminContent/assets/images/logo.png" alt="3Mill" />
+                    </a>
+                    <a href="#" class="sidebar-toggler pull-left visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
+                        <i class="ti-align-justify"></i>
+                    </a>
+                    <a class="pull-left menu-toggler visible-xs-block" id="menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+                        <span class="sr-only">منو</span>
+                        <i class="ti-view-grid"></i>
+                    </a>
+                </div>
+                <!-- end: NAVBAR HEADER -->
+                <!-- start: NAVBAR COLLAPSE -->
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-right">
+                        <!-- start: USER OPTIONS DROPDOWN -->
+                        @Html.Partial("_LoginPartial")
+
+                        <!-- end: USER OPTIONS DROPDOWN -->
+                    </ul>
+                    <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+                    <div class="close-handle visible-xs-block menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+                        <div class="arrow-left"></div>
+                        <div class="arrow-right"></div>
+                    </div>
+                    <!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+                </div>
+                <!-- end: NAVBAR COLLAPSE -->
+            </header>
+            <!-- end: TOP NAVBAR -->
+            @RenderBody()
+        </div>
+        <!-- start: FOOTER -->
+        <footer>
+            <div class="footer-inner">
+                <div class="pull-right">
+                    <span>آزمون سولدا</span>
+                    &copy; <span class="current-year"></span>
+                </div>
+                <div class="pull-left">
+                    <span class="go-top"><i class="ti-angle-up"></i></span>
+                </div>
+            </div>
+        </footer>
+        <!-- end: FOOTER -->
+        <!-- start: SETTINGS -->
+        <!-- Removed: SETTINGS -->
+        <!-- end: SETTINGS -->
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script src="~/Content/AdminContent/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/modernizr/modernizr.js"></script>
+    <script src="~/Content/AdminContent/vendor/jquery-cookie/jquery.cookie.js"></script>
+    <script src="~/Content/AdminContent/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/switchery/switchery.min.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    @RenderSection("js_Requested", required: false)
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- start: 3Mill JAVASCRIPTS -->
+    <script src="~/Content/AdminContent/assets/js/main.js"></script>
+    <!-- start: JavaScript Event Handlers for this page -->
+    @RenderSection("js_Handler", required: false)
+    <!-- end: JavaScript Event Handlers for this page -->
+    <!-- end: 3Mill JAVASCRIPTS -->
+</body>
+</html>

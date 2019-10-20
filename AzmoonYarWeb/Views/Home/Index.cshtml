@@ -1,0 +1,49 @@
+﻿
+<style>
+    .disabledddd a {
+        pointer-events: none;
+        cursor: default;
+        display: none;
+    }
+
+    .disabledddd table {
+        height: 17px;
+    }
+</style>
+@section js_Requested{
+    <script src="~/Content/AdminContent/vendor/Chart.js/Chart.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/jquery.sparkline/jquery.sparkline.min.js"></script>
+}
+@section js_Handler{
+    <script src="~/Content/AdminContent/assets/js/charts.js"></script>
+    <script src="~/Content/AdminContent/assets/js/IranClock.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            InitiateIranClock(@DateTime.Now.Year,@DateTime.Now.Month,@DateTime.Now.Day,@DateTime.Now.Hour,@DateTime.Now.Minute,@DateTime.Now.Second,@DateTime.Now.Millisecond);
+        });
+    </script>
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <div class="container-fluid container-fullw padding-bottom-10">
+            <!-- start: Widgets -->
+            <div class="row margin-bottom-15">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-4">
+                    <div id="ctl00_cphTop_pnl10cphTop_3551">
+                        <div class="inner ">
+                            <div id="canvasClock">
+                                <canvas class="canvas center-block" id="analogClock" width="250" height="250" style="margin-top: -30px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+

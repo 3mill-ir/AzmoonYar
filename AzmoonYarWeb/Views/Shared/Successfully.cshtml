@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "موفقیت";
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <div class="row">
+            <div class="span12">
+                <div style="direction:rtl;text-align:center;font-size:x-large;color:lightgreen;margin-top:15%">
+                    <p style="color:lightgreen">عملیات با موفقیت انجام گرفت</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div style="direction:rtl;text-align:center;font-size:large;color:lightgreen">
+                    <p> این صفحه بعد از ده ثانیه به صفحه خانگی انتقال داده می شود. در غیر این صورت بر روی <a href="@ViewBag.ReturnUrl"> لینک</a> کلیک نمایید.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="~/Scripts/js/vendor/jquery-1.9.1.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                setTimeout(function () {
+                    window.location.href = "@ViewBag.ReturnUrl";
+                }, 5000);
+            });
+        </script>
+    </div>
+</div>

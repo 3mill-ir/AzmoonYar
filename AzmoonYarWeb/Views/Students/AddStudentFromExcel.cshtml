@@ -1,0 +1,29 @@
+﻿<fieldset style="height: 370px;">
+    <legend>
+        آپلود فایل اکسل
+    </legend>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <img id="PipoInputImage" style="height: 190px;border-radius: 10px;margin-top:10px;" src="~/Content/AdminContent/z3mill/SelectURFile.png">
+            <span class="btn btn-success fileinput-button margin-top-10 margin-bottom-10" style="width:100%;">
+                <i class="glyphicon glyphicon-plus"></i> <span>انتخاب فایل</span>
+                <input type="file" name="ExcelFile" multiple="" id="PipoInput" onchange="DoIt()">
+            </span>
+            <div id="PipoAjaxBox">
+                <div role="alert" style="display:none;" class="alert alert-success" id="PipoMessage">
+                    <strong>فایل مورد نظر انتخاب شد</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<button type="submit" style="width:100%;" class="btn btn-wide btn-dark-green ladda-button " data-style="zoom-in">
+    <span class="ladda-label">@Resource.Resource.Submit</span>
+</button>
+@if (ViewBag.Alert != null)
+{
+    <script>
+        UIButtons.init();
+        UINotifications.init("@ViewBag.Alert");
+    </script>
+}

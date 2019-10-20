@@ -1,0 +1,154 @@
+﻿@model AzmoonYarWeb.Models.StudentModel
+@section CSS_Requested{
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+}
+@section js_Requested{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/spin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/ladda.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+}
+@section js_Handler{
+    <script src="~/Content/AdminContent/assets/js/form-elements.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-buttons.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            FormElements.init();
+            UIButtons.init();
+        });
+        var c = document.getElementById("PipoInput");
+        function DoIt() {
+            var d = document.getElementById("PipoInputImage");
+            d.src = "../Content/AdminContent/z3mill/Excel-icon.png";
+            var e = document.getElementById("PipoMessage");
+            e.style = "display:block;";
+        };
+    </script>
+
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <div class="container-fluid container-fullw padding-bottom-10">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="main-login col-md-8">
+                    <!-- start: REGISTER BOX -->
+                    <div class="box-register">
+                        <fieldset>
+                            <legend>
+                                اطلاعات دانش آموز
+                            </legend>
+                            <div class="row">
+                                <div class="col-md-10 col-md-push-1">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.FirstName)
+                                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "نام" })
+                                        @Html.ValidationMessageFor(model => model.FirstName)
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-md-push-1">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.LastName)
+                                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "نام خانوادگی" })
+                                        @Html.ValidationMessageFor(model => model.LastName)
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-md-push-1">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.SSN)
+                                        @Html.TextBoxFor(m => m.SSN, new { @class = "form-control", placeholder = "کد ملی" })
+                                        @Html.ValidationMessageFor(model => model.SSN)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-push-1">
+                                @Html.LabelFor(model => model.Tell)
+                                <div class="input-group" style=" width: 85%;">
+                                    @Html.TextBoxFor(m => m.Tell, new { @class = "form-control input-mask-phone mypipostyle", Id = "form-fieldt-mask-2", placeholder = " (9**) ***-**** شماره همراه", style = "direction: ltr;" })
+                                    <span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Tell)
+                            </div>
+                        </fieldset>
+                        <div style="text-align:left">
+                            <button type="submit" style="width:100%;" class="btn btn-wide btn-dark-green ladda-button " data-style="zoom-in">
+                                <span class="ladda-label">@Resource.Resource.Submit</span>
+                            </button>
+                        </div>
+                        @if (ViewBag.Error != null)
+                        {
+                            <p style="font-size: 20px;color: red;margin-top: 30px;text-align: center;">@ViewBag.Error</p>
+                            ViewBag.Error = null;
+                        }
+                    </div>
+                    <!-- end: REGISTER BOX -->
+                </div>
+            }
+            @using (Html.BeginForm("AddStudentFromExcel", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="main-login col-md-3">
+                    <!-- start: REGISTER BOX -->
+                    <div class="box-register">
+                        <div id="AjaxUpdateBox">
+                            <fieldset style="height: 370px;">
+                                <legend>
+                                    آپلود فایل اکسل
+                                </legend>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <img id="PipoInputImage" style="height: 190px;border-radius: 10px;margin-top:10px;" src="~/Content/AdminContent/z3mill/SelectURFile.png">
+                                        <span class="btn btn-success fileinput-button margin-top-10 margin-bottom-10" style="width:100%;">
+                                            <i class="glyphicon glyphicon-plus"></i> <span>انتخاب فایل</span>
+                                            <input type="file" name="ExcelFile" multiple="" id="PipoInput" onchange="DoIt()">
+                                        </span>
+                                        <div id="PipoAjaxBox">
+                                            @if (ViewBag.Alert == null)
+                                            {
+                                                <div role="alert" style="display:none;" class="alert alert-success" id="PipoMessage">
+                                                    <strong>فایل مورد نظر انتخاب شد</strong>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div role="alert" class="alert alert-warning" id="PipoMessage">
+                                                    <strong>@ViewBag.Alert</strong>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <button type="submit" style="width:100%;" class="btn btn-wide btn-dark-green ladda-button " data-style="zoom-in">
+                                <span class="ladda-label">@Resource.Resource.Submit</span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!-- end: REGISTER BOX -->
+                </div>
+            }
+        </div>
+    </div>
+</div>
